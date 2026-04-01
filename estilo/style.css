@@ -537,6 +537,17 @@ h4,
     border: 1px solid #222;
 }
 
+.link-contato {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.link-contato:hover {
+    color: var(--cor-verde-principal);
+}
+
 .grupo-form {
     margin-bottom: 25px;
     display: flex;
