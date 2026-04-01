@@ -14,30 +14,30 @@ linksMenu.forEach(link => {
 
 const formulario = document.querySelector('form');
 
-formulario.addEventListener('submit', function (event) {
+formulario.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const nome = document.getElementById('nome').value;
     const whatsapp = document.getElementById('whatsapp').value;
     const objetivo = document.getElementById('objetivo').value;
+    const plano = document.getElementById('plano').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    if (nome === '' || whatsapp === '') {
-        alert('Por favor, preencha seu nome e WhatsApp.');
+    if (nome === '' || whatsapp === '' || plano === '') {
+        alert('Por favor, preencha os campos obrigatórios (Nome, WhatsApp e Plano).');
         return;
     }
 
     let textoMensagem = `Olá, Anderson! Meu nome é ${nome}.%0A`;
-    textoMensagem += `Tenho interesse em iniciar os treinos e meu objetivo principal é: *${objetivo}*.%0A`;
-
+    textoMensagem += `Tenho interesse no serviço de: *${plano}*.%0A`;
+    textoMensagem += `Meu objetivo principal é: ${objetivo}.%0A`;
+    
     if (mensagem !== '') {
-        textoMensagem += `Observação: ${mensagem}%0A`;
+        textoMensagem += `%0AObservação: ${mensagem}%0A`;
     }
 
-    textoMensagem += `%0AGostaria de saber mais sobre os planos disponíveis!`;
-
     const numeroPersonal = '5581985629559';
-
     const linkWhatsApp = `https://wa.me/${numeroPersonal}?text=${textoMensagem}`;
+    
     window.open(linkWhatsApp, '_blank');
 });
