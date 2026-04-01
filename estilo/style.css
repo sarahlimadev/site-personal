@@ -63,10 +63,8 @@ h4,
 
 .chamada {
     flex: 1;
-    /* Força a caixa do botão a ter o mesmo tamanho da caixa da logo na direita */
     display: flex;
     justify-content: flex-end;
-    /* Mantém o botão colado na ponta direita */
 }
 
 .menu a {
@@ -647,7 +645,8 @@ h4,
     color: var(--cor-texto-secundario);
     font-size: 0.9rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
 }
