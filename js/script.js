@@ -14,7 +14,7 @@ linksMenu.forEach(link => {
 
 const formulario = document.querySelector('form');
 
-formulario.addEventListener('submit', function(event) {
+formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const nome = document.getElementById('nome').value;
@@ -29,11 +29,11 @@ formulario.addEventListener('submit', function(event) {
 
     let textoMensagem = `Olá, Anderson! Meu nome é ${nome}.%0A`;
     textoMensagem += `Tenho interesse em iniciar os treinos e meu objetivo principal é: *${objetivo}*.%0A`;
-    
+
     if (mensagem !== '') {
         textoMensagem += `Observação: ${mensagem}%0A`;
     }
-    
+
     textoMensagem += `%0AGostaria de saber mais sobre os planos disponíveis!`;
 
     const numeroPersonal = '5581985629559';
