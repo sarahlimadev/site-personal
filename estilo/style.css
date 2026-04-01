@@ -704,13 +704,13 @@ h4,
     display: none;
     background: transparent;
     border: none;
-    color: var(--cor-verde-principal);
+    color: var(--cor-branco);
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .btn-menu-mobile:hover {
-    color: var(--cor-branco);
+    color: var(--cor-verde-escuro);
 }
 
 @media (max-width: 768px) {
@@ -741,8 +741,17 @@ h4,
     }
 
     .menu a {
-        margin: 10px 0;
+        display: block;
+        margin: 5px 5px;
+        padding: 10px 10px;
         font-size: 1.1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: var(--cor-verde-principal);
     }
 
     .hero {
