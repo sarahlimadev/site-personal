@@ -14,7 +14,7 @@ linksMenu.forEach(link => {
 
 const formulario = document.querySelector('form');
 
-formulario.addEventListener('submit', function(event) {
+formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const nome = document.getElementById('nome').value;
@@ -31,13 +31,68 @@ formulario.addEventListener('submit', function(event) {
     let textoMensagem = `Olá, Anderson! Meu nome é ${nome}.%0A`;
     textoMensagem += `Tenho interesse no serviço de: *${plano}*.%0A`;
     textoMensagem += `Meu objetivo principal é: ${objetivo}.%0A`;
-    
+
     if (mensagem !== '') {
         textoMensagem += `%0AObservação: ${mensagem}%0A`;
     }
 
     const numeroPersonal = '5581985629559';
     const linkWhatsApp = `https://wa.me/${numeroPersonal}?text=${textoMensagem}`;
-    
+
     window.open(linkWhatsApp, '_blank');
 });
+
+const trilho = document.querySelector('.slider-trilho');
+const slides = document.querySelectorAll('.item-alunos');
+const btnProx = document.querySelector('.seta-direita');
+const btnAnt = document.querySelector('.seta-esquerda');
+
+let index = 0;
+
+function atualizarSlider() {
+    const larguraCard = slides[0].offsetWidth + 20;
+    trilho.style.transform = `translateX(${-index * larguraCard}px)`;
+}
+
+btnProx.addEventListener('click', () => {
+    index++;
+    if (index > slides.length - 3) index = 0;
+    atualizarSlider();
+});
+
+btnAnt.addEventListener('click', () => {
+    index--;
+    if (index < 0) index = slides.length - 3;
+    atualizarSlider();
+});
+
+setInterval(() => {
+    btnProx.click();
+}, 5000);
+
+const trilhoDepo = document.querySelector('.trilho-depoimentos');
+const itensDepo = document.querySelectorAll('.item-depoimento');
+const btnProxDepo = document.querySelector('.seta-dir');
+const btnAntDepo = document.querySelector('.seta-esq');
+
+let indexDepo = 0;
+
+function moverSliderDepo() {
+    trilhoDepo.style.transform = `translateX(${-indexDepo * 100}%)`;
+}
+
+btnProxDepo.addEventListener('click', () => {
+    indexDepo++;
+    if (indexDepo >= itensDepo.length) indexDepo = 0;
+    moverSliderDepo();
+});
+
+btnAntDepo.addEventListener('click', () => {
+    indexDepo--;
+    if (indexDepo < 0) indexDepo = itensDepo.length - 1;
+    moverSliderDepo();
+});
+
+setInterval(() => {
+    btnProxDepo.click();
+}, 7000);
