@@ -50,25 +50,31 @@ const btnAnt = document.querySelector('.seta-esquerda');
 let index = 0;
 
 function atualizarSlider() {
-    const larguraCard = slides[0].offsetWidth + 20;
+    const larguraCard = slides[0].getBoundingClientRect().width + 20;
     trilho.style.transform = `translateX(${-index * larguraCard}px)`;
 }
 
 btnProx.addEventListener('click', () => {
+    const cardsVisiveis = window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+    
     index++;
-    if (index > slides.length - 3) index = 0;
+    if (index > slides.length - cardsVisiveis) {
+        index = 0;
+    }
     atualizarSlider();
 });
 
 btnAnt.addEventListener('click', () => {
+    const cardsVisiveis = window.innerWidth > 1024 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+    
     index--;
-    if (index < 0) index = slides.length - 3;
+    if (index < 0) {
+        index = slides.length - cardsVisiveis;
+    }
     atualizarSlider();
 });
 
-setInterval(() => {
-    btnProx.click();
-}, 5000);
+window.addEventListener('resize', atualizarSlider);
 
 const trilhoDepo = document.querySelector('.trilho-depoimentos');
 const itensDepo = document.querySelectorAll('.item-depoimento');
