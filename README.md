@@ -15,7 +15,7 @@ O projeto seguiu um fluxo completo de desenvolvimento de software:
 1.  **UI Design**: Todo o protótipo e interface foram desenhados no **Figma**, focando em uma experiência de usuário (UX) intuitiva.
 2.  **Desenvolvimento Clean Code**: Implementação utilizando **HTML5, CSS3 e JavaScript (Vanilla)**, sem o uso de frameworks, para garantir aprendizado e domínio total do código.
 3.  **Deploy e Infraestrutura**:
-    * Hospedagem realizada na **Netlify**.
+    * Hospedagem realizada na **Netlify**. Migrei para **CloudFare** porque o plano gratuito oferece tráfego de banda e acessos ilimitados, o que é bem melhor para o meu uso.
     * Gestão de domínio personalizado (.com) via **Namecheap**.
 4.  **SEO e Indexação**: Configuração de **Sitemap XML** e integração com o **Google Search Console** para garantir que o site seja encontrado nos motores de busca.
 
